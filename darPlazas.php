@@ -42,6 +42,7 @@
             }
             //SI EL CURSO TIENE PLAZAS, GUARDAMOS LA SOLICITUD Y HACEMOS EL UPDATE EN LA BASE DE DATOS
             if ($plazasRestantes[$curso] > 0) {
+                //RESTAMOS UNA PLAZA PARA LA SIGUIENTE VUELTA DEL BUCLE
                 $plazasRestantes[$curso]--;
                 $update = $con->prepare("UPDATE solicitudes set admitido = 1 where dni= :dni");
                 $update2 = $con->prepare("UPDATE cursos set numeroplazas = numeroplazas-1 where codigo = :codigo");
