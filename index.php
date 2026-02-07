@@ -101,6 +101,7 @@ if (isset($_SESSION['user'])) {
 
 <body style="text-align: center;">
     <h1>Cursos disponibles</h1>
+    <!-- FUNCIONAL -->
     <?php
     require_once "funciones.php";
     $con = conectar();
